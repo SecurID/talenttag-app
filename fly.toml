@@ -1,0 +1,27 @@
+app = "talenttag-app"
+primary_region = "cdg"
+
+[build]
+  [build.args]
+    NODE_VERSION = "18"
+    PHP_VERSION = "8.2"
+
+[env]
+  APP_NAME = "Adlertag App"
+  APP_ENV = "production"
+  LOG_CHANNEL = "stderr"
+  LOG_LEVEL = "info"
+  LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
+  APP_KEY = "base64:oXgO0tphM+/HIRERC6ANDd/BoVsWStI00eaFT/HQpu4="
+  DB_CONNECTION = "mysql"
+  DB_HOST= "eintracht-mysql.internal"
+  DB_PORT= "3306"
+  DB_DATABASE= "eintracht"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  max_machines_running = 1
