@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\PlayersImport;
 use App\Models\Event;
 use App\Models\EventPlayer;
 use App\Models\Player;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -93,5 +93,20 @@ class PlayerController extends Controller
         $player->delete();
 
         return response()->json();
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx'
+        ]);
+
+        $file = $request->file('file');
+
+        // Import the file into the database
+        \Maatwebsite\Excel\Facades\Excel::import(new PlayersImport, $file);
+
+        // Redirect the user back and show a success message
+        return back()->with('success', 'Users imported successfully.');
     }
 }

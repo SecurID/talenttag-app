@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Rating extends Model
@@ -16,4 +17,9 @@ class Rating extends Model
         'rating',
         'comment',
     ];
+
+    public function player(): BelongsTo
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

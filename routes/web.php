@@ -24,7 +24,18 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/events/import', function() {
+        $events = \App\Models\Event::all();
+        return view('events.import',
+            ['events' => $events]);
+    })->name('events.import');
     Route::get('/events/{id}', [EventController::class, 'view'])->name('event.view');
+    Route::post('/players/import/{id}', [PlayerController::class, 'import'])->name('players.import');
+    Route::get('/players/import/{id}', function($id) {
+        $event = \App\Models\Event::find($id);
+       return view('players.import',
+       ['event' => $event]);
+    });
     Route::get('/players/{id}', [PlayerController::class, 'view'])->name('player.view');
 });
 

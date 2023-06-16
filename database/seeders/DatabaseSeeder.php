@@ -27,14 +27,5 @@ class DatabaseSeeder extends Seeder
             'host' => 'Eintracht',
             'date' => '01.01.2025 12:00:00'
         ]);
-
-        $players = Player::factory()->count(10)->create();
-
-        foreach($players as $player){
-            $eventPlayer = new EventPlayer();
-            $eventPlayer->event_id = 1;
-            $eventPlayer->player_id = $player->id;
-            $eventPlayer->save();
-        }
     }
 }
