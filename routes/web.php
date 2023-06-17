@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,9 @@ Route::middleware(['auth', 'verified'])->group(function() {
        ['event' => $event]);
     });
     Route::get('/players/{id}', [PlayerController::class, 'view'])->name('player.view');
+
+    Route::get('/review', [ReviewController::class, 'view'])->name('review.view');
+    Route::get('/review/{id}', [ReviewController::class, 'single'])->name('review.single');
 });
 
 Route::middleware('auth')->group(function () {
