@@ -24,8 +24,9 @@ class DatabaseSeeder extends Seeder
          ]);
 
         Event::factory()->create([
-            'host' => 'Eintracht',
-            'date' => '01.01.2025 12:00:00'
+            'host' => 'Talenttag Berlin',
+            'date' => '28.09.2024 12:00:00'
         ]);
+
     }
 }

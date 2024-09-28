@@ -39,12 +39,8 @@ class PlayerController extends Controller
             'birthdate' => ['required'],
             'email' => ['required', 'email', 'max:254'],
             'phone' => ['required'],
-            'street' => ['required'],
-            'housenumber' => ['required'],
             'city' => ['required'],
-            'zip' => ['required'],
             'club' => ['required'],
-            'position' => ['required'],
             'accepted_disclaimer' => ['required'],
         ]);
 
@@ -74,12 +70,8 @@ class PlayerController extends Controller
             'last_name' => ['required'],
             'email' => ['required', 'email', 'max:254'],
             'phone' => ['required'],
-            'street' => ['required'],
-            'housenumber' => ['required'],
             'city' => ['required'],
-            'zip' => ['required'],
             'club' => ['required'],
-            'position' => ['required'],
             'accepted_disclaimer' => ['required'],
         ]);
 

@@ -37,33 +37,13 @@
                     </div>
 
                     <div>
-                        <label for="street" class="block text-sm font-medium text-gray-700">Straße</label>
-                        <input type="text" name="street" id="street" autocomplete="street-address" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    </div>
-
-                    <div>
-                        <label for="housenumber" class="block text-sm font-medium text-gray-700">Hausnummer</label>
-                        <input type="text" name="housenumber" id="housenumber" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    </div>
-
-                    <div>
                         <label for="city" class="block text-sm font-medium text-gray-700">Stadt</label>
                         <input type="text" name="city" id="city" autocomplete="address-level2" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     </div>
 
                     <div>
-                        <label for="zip" class="block text-sm font-medium text-gray-700">PLZ</label>
-                        <input type="text" name="zip" id="zip" autocomplete="postal-code" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    </div>
-
-                    <div>
                         <label for="club" class="block text-sm font-medium text-gray-700">Verein</label>
                         <input type="text" name="club" id="club" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    </div>
-
-                    <div>
-                        <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
-                        <input type="text" name="position" id="position" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     </div>
 
                     <div class="inline-flex">

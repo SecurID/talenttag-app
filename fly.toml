@@ -1,27 +1,42 @@
-app = "talenttag-app"
-primary_region = "cdg"
+# fly.toml app configuration file generated for talenttag-app-cold-cherry-4172 on 2024-09-27T18:32:21+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'talenttag-app-cold-cherry-4172'
+primary_region = 'cdg'
+console_command = 'php /var/www/html/artisan tinker'
 
 [build]
   [build.args]
-    NODE_VERSION = "18"
-    PHP_VERSION = "8.2"
+    NODE_VERSION = '18'
+    PHP_VERSION = '8.2'
 
 [env]
-  APP_NAME = "Adlertag App"
-  APP_ENV = "production"
-  LOG_CHANNEL = "stderr"
-  LOG_LEVEL = "info"
-  LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
-  APP_KEY = "base64:oXgO0tphM+/HIRERC6ANDd/BoVsWStI00eaFT/HQpu4="
-  DB_CONNECTION = "mysql"
-  DB_HOST= "eintracht-mysql.internal"
-  DB_PORT= "3306"
-  DB_DATABASE= "eintracht"
+  APP_ENV = 'production'
+  LOG_CHANNEL = 'stderr'
+  LOG_LEVEL = 'info'
+  LOG_STDERR_FORMATTER = 'Monolog\Formatter\JsonFormatter'
+  SESSION_DRIVER = 'cookie'
+  SESSION_SECURE_COOKIE = 'true'
+  DB_CONNECTION="mysql"
+  DB_HOST="my-mysql-dawn-wind-8219.internal"
+  DB_DATABASE="talenttag"
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 1
+  min_machines_running = 0
   max_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+# Automatically run migrations and seed the database
+[deploy]
+  release_command = '/var/www/html/deploy.sh'

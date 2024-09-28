@@ -20,13 +20,13 @@ class PasswordProtected
     public function handle(Request $request, Closure $next): mixed
     {
         if ($request->has('password')) {
-            if ($request->input('password') === 'eintracht2023') {
+            if ($request->input('password') === 'talenttag2024') {
                 session(['password' => $request->input('password')]);
                 return $next($request);
             } else {
                 return redirect('/password');
             }
-        } elseif (session('password') !== 'eintracht2023') {
+        } elseif (session('password') !== 'talenttag2024') {
             return redirect('/password');
         }
 

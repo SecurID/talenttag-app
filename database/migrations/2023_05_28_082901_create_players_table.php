@@ -9,16 +9,12 @@ return new class extends Migration {
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('street');
-            $table->string('housenumber');
-            $table->string('city');
-            $table->string('zip');
-            $table->string('club');
-            $table->string('position');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('city')->nullable();
+            $table->string('club')->nullable();
             $table->boolean('accepted_disclaimer');
             $table->softDeletes();
             $table->timestamps();
